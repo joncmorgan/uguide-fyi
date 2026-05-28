@@ -1,5 +1,7 @@
-/* pdf.css - v2.3.1 
+/* pdf.css - v2.3.3 
    Cleaned up visibility logic to prevent accidental web hiding.
+   Forces a pure white background for printing/PDF generation to save ink.
+   Upgraded with full CSS styling support for Markdown Admonitions/Callout cards.
 */
 
 @page {
@@ -17,9 +19,11 @@
     }
 }
 
-/* Note: Visibility (display: none) is handled in the main HTML 
-   template to ensure zero flickering on screen. 
-*/
+/* Force a pure white background on the entire document layout for WeasyPrint */
+html, body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
 
 .pdf-cover {
     display: flex;
@@ -28,6 +32,7 @@
     align-items: center;
     height: 24cm;
     text-align: center;
+    background: #ffffff !important;
 }
 
 .pdf-category-page {
@@ -39,8 +44,59 @@
     margin-bottom: 1cm;
     border: 1px solid #e2e8f0;
     padding: 24pt;
+    background: #ffffff !important;
+    box-shadow: none !important; /* Strips shadows for clean printing */
 }
 
+/* --- ADMONITION & CALLOUT STYLES (PDF Engine Support) --- */
+.admonition {
+    padding: 15pt 18pt;
+    margin: 18pt 0;
+    border-left: 4px solid #64748b;
+    border-radius: 4pt;
+    page-break-inside: avoid; /* Prevents callouts from slicing awkwardly across pages */
+}
+
+.admonition-title {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 6pt;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 1. Note Callout (Blue) */
+.admonition.note {
+    background-color: #f0f9ff !important;
+    border-left-color: #0284c7 !important;
+    color: #0369a1 !important;
+}
+.admonition.note .admonition-title {
+    color: #0c4a6e !important;
+}
+
+/* 2. Warning Callout (Amber) */
+.admonition.warning {
+    background-color: #fffbeb !important;
+    border-left-color: #d97706 !important;
+    color: #b45309 !important;
+}
+.admonition.warning .admonition-title {
+    color: #78350f !important;
+}
+
+/* 3. Info Callout (Slate) */
+.admonition.info {
+    background-color: #f8fafc !important;
+    border-left-color: #475569 !important;
+    color: #334155 !important;
+}
+.admonition.info .admonition-title {
+    color: #0f172a !important;
+}
+
+/* --- PHYSICAL LABEL SECTION --- */
 .pdf-label-section {
     page-break-before: always;
     background: transparent !important;
@@ -56,6 +112,8 @@
     border: 1px solid #e2e8f0 !important;
     page-break-inside: avoid;
     padding: 10pt;
+    background: #ffffff !important;
+    box-shadow: none !important;
 }
 
 .qr-sticker img {
