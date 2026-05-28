@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="version" content="2.4.1">
+    <meta name="version" content="2.4.2">
     <meta name="generator" content="Uguide Build Engine">
     <title>Bendigo North Soccer Club | Uguide.fyi</title>
     <!-- Enabled Tailwind Typography Plugin to restore Markdown styles stripped by Tailwind Preflight -->
@@ -17,6 +17,10 @@
             --primary: #0f172a;
             --accent: #3b82f6;
             --bg-gray: #f8fafc;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Enables elegant sliding scroll transitions */
         }
 
         body {
@@ -108,7 +112,7 @@
         }
     </style>
 </head>
-<body class="pb-24">
+<body class="pb-24" id="top"> <!-- Assigned top anchor for quick return scroll -->
 
     <!-- 1. THE HIDDEN COVER PAGE (PDF ONLY) -->
     <div class="pdf-only pdf-cover">
@@ -136,7 +140,7 @@
         </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto px-4 pt-12 pb-10 no-print">
+    <header class="max-w-4xl mx-auto px-4 pt-12 pb-6 no-print">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
                 <h1 class="text-5xl font-black text-slate-900 tracking-tighter">Bendigo North Soccer Club</h1>
@@ -147,6 +151,71 @@
 
     <!-- 3. MAIN CONTENT -->
     <main class="max-w-4xl mx-auto px-4 mt-6">
+        
+        <!-- Table of Contents (Screen Only) -->
+        <div class="no-print bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm mb-10">
+            <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Table of Contents</h2>
+            <ul class="grid md:grid-cols-2 gap-3">
+                
+                <li>
+                    <a href="#welcome-&-building-overview" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Welcome & Building Overview
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#water-consumption-&-shower-efficiency" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Water Consumption & Shower Efficiency
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#smart-energy-scheduling-guide" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Smart Energy Scheduling Guide
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#climate-comfort-&-efficiency" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Climate Comfort & Efficiency
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#waste-management" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Waste Management
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#internal-lighting" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Internal Lighting
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#external-lighting" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        External Lighting
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#access-control-&-security" class="text-slate-700 hover:text-blue-600 font-semibold flex items-center gap-2 transition-colors text-base">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Access Control & Security
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
         <div class="grid gap-8">
             
             <!-- pdf-category-page class forces a page-break-before in the PDF generated by WeasyPrint -->
@@ -167,6 +236,14 @@
 </div>
 <p>Building users play a critical role in maximizing this efficiency. Please refer to this Building User Guide for practical information on how to stay comfortable while managing the building’s operational efficiency. </p>
 <p>Users are also encouraged to regularly review metering and sub-metering data to better understand energy and water usage patterns. You will find it helps you to better identify opportunities for cost savings, rather than relying solely on utility bills for performance feedback.</p>
+                </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
                 </div>
             </article>
             
@@ -204,6 +281,14 @@
 </li>
 </ul>
                 </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
+                </div>
             </article>
             
             <!-- pdf-category-page class forces a page-break-before in the PDF generated by WeasyPrint -->
@@ -228,6 +313,14 @@
 <p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/Smart_Energy_Playbook_Page_002.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hvac-comfort-1"></div></p>
 <p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/Smart_Energy_Playbook_Page_006.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hvac-comfort-2"></div></p>
 <p>This facility operates with a 9kW solar power system. To maximize energy efficiency and reduce costs, where practical, energy-intensive activities should be scheduled during daylight hours when solar power is available (10:00 AM - 3:00 PM). This guide outlines recommended scheduling for common building operations.</p>
+                </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
                 </div>
             </article>
             
@@ -288,6 +381,14 @@ Central control system: Mitsubishi Electric AE-200E</p>
 <p>Ventilation within the changerooms showers, restrooms, and cleaner room  is automated via the lighting sensors, with each exhaust fan set to a 10-minute run-down timer. </p>
 <p>Specialized units, such as those for the dishwasher and storeroom, are operated by localized manual switches clearly marked with their respective labels.</p>
                 </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
+                </div>
             </article>
             
             <!-- pdf-category-page class forces a page-break-before in the PDF generated by WeasyPrint -->
@@ -300,6 +401,14 @@ Central control system: Mitsubishi Electric AE-200E</p>
 <li>Based on council’s waste management</li>
 </ul>
 <p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/Smart_Energy_Playbook_Page_002.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hvac-comfort-1"></div></p>
+                </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
                 </div>
             </article>
             
@@ -320,6 +429,14 @@ Central control system: Mitsubishi Electric AE-200E</p>
 <li>Bar/Kiosk lighting: controlled by a time clock with manual switching capability.</li>
 </ul>
                 </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
+                </div>
             </article>
             
             <!-- pdf-category-page class forces a page-break-before in the PDF generated by WeasyPrint -->
@@ -327,6 +444,14 @@ Central control system: Mitsubishi Electric AE-200E</p>
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">External Lighting</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
                     <p>External lighting is controlled by a combination of a photoelectric cell switch and a time clock. The photoelectric cell, mounted at high level on the south-facing wall, automatically switches the lighting on and off based on ambient daylight levels. The time clock provides additional scheduling control and can be set to Auto, Manual, or Changeover with Off settings, allowing flexibility for automatic operation or manual override as required.</p>
+                </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
                 </div>
             </article>
             
@@ -340,6 +465,14 @@ Central control system: Mitsubishi Electric AE-200E</p>
 <li>Staff Access: Use your assigned encrypted key fob at the proximity readers located at the North and South entries.</li>
 <li>Visitor Access: During business hours, visitors should use the intercom located at the North Gate to speak with reception.</li>
 </ul>
+                </div>
+                
+                <!-- Back to Top Link (Screen Only) -->
+                <div class="no-print flex justify-end mt-8 pt-4 border-t border-slate-100">
+                    <a href="#top" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1.5 transition-colors uppercase tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        Back to Top
+                    </a>
                 </div>
             </article>
             
