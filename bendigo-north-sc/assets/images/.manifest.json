@@ -3,20 +3,40 @@
     "mtime": 1779932810.782707,
     "size": 6146
   },
-  "Smart_Energy_Playbook_Page_002.png": {
-    "mtime": 1778079524.0,
-    "size": 2394335
+  "01_Overview_Page_001.png": {
+    "mtime": 1780034068.912,
+    "size": 7439263
   },
-  "Smart_Energy_Playbook_Page_006.png": {
-    "mtime": 1778079526.0,
-    "size": 2189009
+  "02_hot_water.png": {
+    "mtime": 1780035831.27,
+    "size": 2207995
   },
-  "Smart_Energy_Playbook_Page_007.png": {
-    "mtime": 1778079526.0,
-    "size": 2560784
+  "03_smart_scheduling_weekday.png": {
+    "mtime": 1780035440.404,
+    "size": 3085282
   },
-  "Water_heater_system_operation.png": {
-    "mtime": 1778079274.0,
-    "size": 4444931
+  "03_smart_scheduling_weekend.png": {
+    "mtime": 1780035426.258,
+    "size": 3028456
+  },
+  "04_AC_dual_point_programming.png": {
+    "mtime": 1780034101.814,
+    "size": 2717385
+  },
+  "05_Waste_Sorting_Guide.png": {
+    "mtime": 1780034109.578,
+    "size": 4891450
+  },
+  "06_internal_lighting.png": {
+    "mtime": 1780034393.998,
+    "size": 8850161
+  },
+  "07_external_lighting.png": {
+    "mtime": 1780036631.268,
+    "size": 2716413
+  },
+  "08_security_access.png": {
+    "mtime": 1780035159.731,
+    "size": 8901111
   }
 }

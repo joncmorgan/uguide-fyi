@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="version" content="2.4.2">
+    <meta name="version" content="2.6.0">
     <meta name="generator" content="Uguide Build Engine">
     <title>Bendigo North Soccer Club | Uguide.fyi</title>
     <!-- Enabled Tailwind Typography Plugin to restore Markdown styles stripped by Tailwind Preflight -->
@@ -110,9 +110,31 @@
             color: #78350f;
             margin-bottom: 0.5rem;
         }
+
+        /* --- WATERMARK STYLING --- */
+        .draft-watermark {
+            position: fixed;
+            top: 40%;
+            left: 5%;
+            width: 90%;
+            text-align: center;
+            font-size: 8rem;
+            color: rgba(148, 163, 184, 0.45) !important; /* Synchronized to match the pdf.css watermark */
+            transform: rotate(-25deg);
+            z-index: 1000;
+            pointer-events: none; /* Prevents text blockage and element selection */
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
     </style>
 </head>
-<body class="pb-24" id="top"> <!-- Assigned top anchor for quick return scroll -->
+<body class="pb-24" id="top">
+
+    <!-- Conditionally rendered diagonal watermark (repeats on every PDF page and stays active on screen) -->
+    
+    <div class="draft-watermark">DRAFT</div>
+    
 
     <!-- 1. THE HIDDEN COVER PAGE (PDF ONLY) -->
     <div class="pdf-only pdf-cover">
@@ -222,20 +244,11 @@
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="welcome-&-building-overview">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Welcome & Building Overview</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>Key points to be covered:</p>
-<ul>
-<li>Why is energy efficiency important? </li>
-<li>What are the energy efficiency/sustainability features of this building? </li>
-<li>How the end users play a vital role helping the building to achieve energy efficiency. </li>
-<li>Metering and sub-metering - encourage users to review them regularly instead of just waiting for the bills</li>
-<li>High-level visual map of the Social, Foyer, and Changeroom zones (TBD).</li>
-</ul>
-<p>Achieving energy efficiency is vital for the building. This facility is equipped with several sustainability features, including a 9kW rooftop Solar PV system, efficient lighting and air conditioning, and rainwater harvesting for potable water reductions. </p>
-<div class="admonition note">
-<p class="admonition-title">Building users play a critical role in maximizing this efficiency. Please refer to this Building User Guide for practical information on how to stay comfortable while managing the building’s operational efficiency.</p>
-</div>
+                    <p>Achieving energy efficiency is vital for the building. This facility is equipped with several sustainability features, including a 9kW rooftop Solar PV system, efficient lighting and air conditioning, and rainwater harvesting for potable water reductions. </p>
+<p>Building users play a critical role in maximizing this efficiency. Please refer to this Building User Guide for practical information on how to stay comfortable while managing the building’s operational efficiency.</p>
 <p>Building users play a critical role in maximizing this efficiency. Please refer to this Building User Guide for practical information on how to stay comfortable while managing the building’s operational efficiency. </p>
-<p>Users are also encouraged to regularly review metering and sub-metering data to better understand energy and water usage patterns. You will find it helps you to better identify opportunities for cost savings, rather than relying solely on utility bills for performance feedback.</p>
+<p>Users are also encouraged to regularly review metering and sub-metering data to better understand energy and water usage patterns. You will find it helps you to better identify opportunities for cost savings, rather than relying solely on utility bills for performance feedback. </p>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/01_Overview_Page_001.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: overview-page"></div></p>
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -251,16 +264,7 @@
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="water-consumption-&-shower-efficiency">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Water Consumption & Shower Efficiency</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>Requirement: Visual "peak-shaving" guide for Saturday soccer matches to manage heat pump capacity.</p>
-<p>Info: 3 * Rheem 613315 (315L) storage water heater, 2 for showers. Likely no timer</p>
-<p>Key points to be covered:</p>
-<ul>
-<li>How the hot water system operated (eg: instant hot water, if any 2mins delay button)</li>
-<li>Recommended shower time (eg: at least 1 hour after last peak usage to ensure sufficient hot water)</li>
-<li>Advise for hot water conservation/preventing shortage: 4-min shower</li>
-<li>What to do if running out of hot water (basically wait? Notify the building manager?)</li>
-</ul>
-<h2>Water Efficient Fittings</h2>
+                    <h2>Water Efficient Fittings</h2>
 <p>New fittings and fixtures installed in this facility are water efficient types. </p>
 <p>The star ratings for these fittings are nominated below:</p>
 <ul>
@@ -272,14 +276,15 @@
 </ul>
 <h2>Hot Water and Shower</h2>
 <ul>
-<li>Water Temperature: Water temperature for showers are factory-preset at 45°C maximum.  Temperature  adjustments must only be made by authorised personnel for legal and safety reasons.</li>
-<li>Solar Maximize: Hot water is most efficient when used between 10:00 am and 3:00 pm. This allows the unit to utilise any available "free" rooftop solar power rather than the grid.</li>
-<li>Preventing Hot Water Shortages:<ul>
-<li>Shorter Showers: Aim for a 4-minute shower. Reducing shower time from 7 minutes to 4 can save up to 10 litres of hot water per person.</li>
-<li>System Recovery: The hot water storage allows a maximum of 42 showers. Once this is used up, allow system recovery for 1 hour, which should be enough for another two teams showering if a 4-minute shower is adopted.</li>
+<li><strong>Water Temperature</strong>: Water temperature for showers are factory-preset at 45°C maximum.  Temperature  adjustments must only be made by authorised personnel for legal and safety reasons.</li>
+<li><strong>Solar Maximize:</strong> Hot water is most efficient when used between 10:00 am and 3:00 pm. This allows the unit to utilise any available "free" rooftop solar power rather than the grid.</li>
+<li><strong>Preventing Hot Water Shortages:</strong><ul>
+<li><strong>Shorter Showers</strong>: Aim for a <strong>4-minute shower</strong>. Reducing shower time from 7 minutes to 4 can save up to 10 litres of hot water per person.</li>
+<li><strong>System Recovery:</strong> The hot water storage allows a maximum of 42 showers. Once this is used up, allow system recovery for <strong>1 hour</strong>, which <strong>should be enough for another two teams</strong> showering if a 4-minute shower is adopted.</li>
 </ul>
 </li>
 </ul>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/02_hot_water.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hot-water"></div></p>
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -295,24 +300,9 @@
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="smart-energy-scheduling-guide">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Smart Energy Scheduling Guide</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>Requirement: Diagram encouraging energy-heavy tasks (laundry/cleaning) during daylight hours (9kW system).</p>
-<p>Info: Energy-heavy tasks in this project including:</p>
-<ul>
-<li>HVAC system</li>
-<li>Dishwasher</li>
-<li>Kitchen prep equipments (eg: oven)</li>
-<li>Hot water system</li>
-<li>Cleaning/laundry (unlikely)</li>
-</ul>
-<p>Key points to be covered:</p>
-<ul>
-<li>Recommended usage hours for energy-intensive activities (dishwasher, kitchen prep, etc.)</li>
-<li>HVAC pre-heating and pre-cooling before night events</li>
-<li>HVAC zoning stage (do not turn on all at once)</li>
-</ul>
-<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/Smart_Energy_Playbook_Page_002.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hvac-comfort-1"></div></p>
-<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/Smart_Energy_Playbook_Page_006.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hvac-comfort-2"></div></p>
-<p>This facility operates with a 9kW solar power system. To maximize energy efficiency and reduce costs, where practical, energy-intensive activities should be scheduled during daylight hours when solar power is available (10:00 AM - 3:00 PM). This guide outlines recommended scheduling for common building operations.</p>
+                    <p>This facility operates with a 9kW solar power system. To maximize energy efficiency and reduce costs, where practical, energy-intensive activities should be scheduled during daylight hours when solar power is available (10:00 AM - 3:00 PM). This guide outlines recommended scheduling for common building operations.</p>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/03_smart_scheduling_weekday.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: smart-schedule-1"></div></p>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/03_smart_scheduling_weekend.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: smart-schedule-2"></div></p>
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -328,19 +318,7 @@
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="climate-comfort-&-efficiency">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Climate Comfort & Efficiency</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>Requirement: "How-to" visuals for thermostats (H/C settings), manual shut-off procedures, and utilizing skylights.</p>
-<p>Info: HVAC schedule<br />
-Central control system: Mitsubishi Electric AE-200E</p>
-<p>Key points to be covered:</p>
-<ul>
-<li>How to switch on/off (Explicit instructions for setting the H/C controller to avoid accidental 24/7 operation)</li>
-<li>How to set temperature, recommended set temperature in summer and winter</li>
-<li>Do not operate the air-conditioning system with doors open on hot or cold days</li>
-<li>Ensure multipurpose room two ceiling cassette units shall always be in the same  mode of either heating or cooling.</li>
-<li>Strongly encourage serving from inside the kiosk rather than opening the external roller door to minimize thermal loss</li>
-<li>Emphasize that manual shut-off by the user is the preferred method for cost savings</li>
-</ul>
-<h2>ON/OFF and Temperature Control</h2>
+                    <h2>ON/OFF and Temperature Control</h2>
 <p>Wall-mounted thermostat controllers are provided in the Multi-purpose Room, Office, and Foyer, allowing the air conditioning system in each area to be controlled independently. Users can operate the air conditioning in each room using the local thermostat controller to turn the unit on or off, adjust the temperature, and control airflow settings.</p>
 <h2>Temperature Set-Points</h2>
 <p>To balance occupant comfort with the building's energy efficiency targets, the system is designed to the following seasonal set-points:</p>
@@ -351,15 +329,7 @@ Central control system: Mitsubishi Electric AE-200E</p>
 <h2>Energy saving</h2>
 <p>However, the system has many energy-saving features that can be learned from the Instruction Book. A handy feature is the Auto (dual set point) mode.</p>
 <p>By setting separate heating and cooling targets (e.g., heating 19°C and cooling 25°C), you create a natural "floating zone". The air conditioner stays completely idle as long as the room temperature stays within this buffer, preventing the system from trying to meet a strict temperature range. The lower that you can set the heating temperature and the higher the cooling temperature, the more energy you will save.</p>
-<h2>How to Set up the dual setpoint</h2>
-<ol>
-<li>Switch to Auto Mode: Press the F1 (Mode) button on the main screen until Auto appears with both a snowflake and a sun icon.</li>
-<li>Open the Temperature Screen: Press F2 (–) or F3 (+) to open the dual setpoint screen.</li>
-<li>Set the Cooling Limit: Use F1 or F2 to move the cursor to the Snowflake. Press F3 or F4 to set your top temperature (e.g., 25.0°C).</li>
-<li>Set the Heating Limit: Move the cursor to the Sun. Press F3 or F4 to set your bottom temperature (e.g., 19.0°C).</li>
-<li>Save: Press the SELECT (Tick) button to lock it in</li>
-</ol>
-<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/placeholder.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: image-1"></div></p>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/04_AC_dual_point_programming.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: ac-programming"></div></p>
 <p>For additional guidance on operating the air-conditioning system, consult the PAR-41MAA Instruction Book (searchable on Google using the phrase "PAR-41MAA Instruction Book").</p>
 <h3>When the HVAC System is ON…</h3>
 <ul>
@@ -369,6 +339,8 @@ Central control system: Mitsubishi Electric AE-200E</p>
 </ul>
 <h2>End-of-Day Procedures</h2>
 <p>Ensure all wall-mounted controllers are manually switched off to maximize building energy savings. This can be performed on the local units or by the central controller in the Bar.</p>
+<p>Perform a final manual check to ensure that all exhaust systems are shut off except the essential ones (eg: the ones in the storeroom).</p>
+<h2>HeadingMulti-Purpose Space Outdoor Air</h2>
 <p>The Multi-Purpose Space is supplied with outdoor air via the air conditioning units. When the air conditioners in this space operate, a fan for that system also operates to provide outside air directly into the air conditioner air circulation path. This is an automatic feature that cannot be overridden.</p>
 <h2>Changeroom Heat Recovery Ventilation</h2>
 <p>To keep your change rooms constantly fresh and dry, a heat recovery ventilation system operates to pull in outdoor air while exhausting stale, humid indoor air.</p>
@@ -379,7 +351,10 @@ Central control system: Mitsubishi Electric AE-200E</p>
 </ul>
 <h2>Exhaust Fans</h2>
 <p>Ventilation within the changerooms showers, restrooms, and cleaner room  is automated via the lighting sensors, with each exhaust fan set to a 10-minute run-down timer. </p>
-<p>Specialized units, such as those for the dishwasher and storeroom, are operated by localized manual switches clearly marked with their respective labels.</p>
+<p>Specialized units, such as those for the dishwasher and storeroom, are operated by localized manual switches clearly marked with their respective labels. </p>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTU2NDUwMTQ5OF19
+-->
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -395,12 +370,7 @@ Central control system: Mitsubishi Electric AE-200E</p>
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="waste-management">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Waste Management</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>Requirement: Visual bin sorting guide (Organics/Recycling) and generic management/emergency contacts.</p>
-<p>Key points to be covered:</p>
-<ul>
-<li>Based on council’s waste management</li>
-</ul>
-<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/Smart_Energy_Playbook_Page_002.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: hvac-comfort-1"></div></p>
+                    <p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/05_Waste_Sorting_Guide.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: waste-sorting"></div></p>
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -416,18 +386,14 @@ Central control system: Mitsubishi Electric AE-200E</p>
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="internal-lighting">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Internal Lighting</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <ul>
-<li>Maximize natural lighting</li>
-<li>Explain how the lighting system varies with natural light</li>
-</ul>
+                    <h2>Internal Lighting</h2>
 <p>The lighting system is designed to improve energy efficiency by responding automatically to occupancy and available natural daylight.</p>
 <p>All rooms and internal spaces include occupancy and daylight sensors, which reduce unnecessary lighting use by switching lights off when spaces are unoccupied and adjusting lighting levels when sufficient natural daylight is available.</p>
-<p>Additional controls include:</p>
-<ul>
-<li>External circulation/access lighting: controlled by a time clock and PE daylight sensor.</li>
-<li>External security lighting: controlled by a PE daylight sensor.</li>
-<li>Bar/Kiosk lighting: controlled by a time clock with manual switching capability.</li>
-</ul>
+<p>Additional controls include:<br />
+- Lighting throughout the building is controlled through a central switching panel. A master switch labelled “Master” allows staff to switch off general lighting when the building is not in use, helping reduce unnecessary energy use.<br />
+- An after-hours switch is also provided, allowing selected lights to remain on temporarily for up to two hours outside normal operating times.<br />
+- Bar/Kiosk lighting: controlled by a time clock with manual switching capability.</p>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/06_internal_lighting.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: internal-lighting"></div></p>
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -443,7 +409,12 @@ Central control system: Mitsubishi Electric AE-200E</p>
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="external-lighting">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">External Lighting</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>External lighting is controlled by a combination of a photoelectric cell switch and a time clock. The photoelectric cell, mounted at high level on the south-facing wall, automatically switches the lighting on and off based on ambient daylight levels. The time clock provides additional scheduling control and can be set to Auto, Manual, or Changeover with Off settings, allowing flexibility for automatic operation or manual override as required.</p>
+                    <p>External lighting is controlled by a combination of a photoelectric cell switch and a time clock. The photoelectric cell, mounted at high level on the south-facing wall, automatically switches the lighting on and off based on ambient daylight levels. The time clock provides additional scheduling control and can be set to Auto, Manual, or Changeover with Off settings, allowing flexibility for automatic operation or manual override as required.<br />
+- External circulation/access lighting: controlled by a time clock and PE daylight sensor.<br />
+- External security lighting: controlled by a PE daylight sensor.</p>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTExMzcyMDI2OV19
+-->
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -459,12 +430,17 @@ Central control system: Mitsubishi Electric AE-200E</p>
             <article class="asset-card p-8 border border-slate-200 pdf-category-page" id="access-control-&-security">
                 <h2 class="text-3xl font-black mb-6 text-slate-900 tracking-tight border-b pb-4 border-slate-100">Access Control & Security</h2>
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
-                    <p>Requirement: Security system operation included as a generic management item.</p>
-<p>All main entry points are fitted with electronic strike locks and integrated with the building's central security BMS.</p>
+                    <p>The building security system is a Windows-based access control system with real-time monitoring and site plan integration. Operators can view device locations and status, remote release front door, and manage proximity cards through the security panel within the Communication Room. Detectors can be armed/disarmed from the keypad within entry.</p>
+<p>All main entry points are fitted with electronic strike locks and integrated with the building's central security system.</p>
 <ul>
-<li>Staff Access: Use your assigned encrypted key fob at the proximity readers located at the North and South entries.</li>
-<li>Visitor Access: During business hours, visitors should use the intercom located at the North Gate to speak with reception.</li>
+<li>
+<p>Staff Access: Use your assigned encrypted key fob at the proximity readers located at the North and South entries.</p>
+</li>
+<li>
+<p>Visitor Access: During business hours, visitors should use the intercom located at the North Gate to speak with reception.</p>
+</li>
 </ul>
+<p><div class="my-6" style="page-break-inside: avoid; break-inside: avoid; display: block; text-align: center; width: 100%;"><img src="assets/images/08_security_access.png" class="rounded-xl border border-slate-200 h-auto" style="max-width: 100%; max-height: 12cm; object-fit: contain; display: block; margin: 0 auto; page-break-inside: avoid; break-inside: avoid;" alt="Asset Image: security-access"></div></p>
                 </div>
                 
                 <!-- Back to Top Link (Screen Only) -->
@@ -478,90 +454,13 @@ Central control system: Mitsubishi Electric AE-200E</p>
             
         </div>
 
-        <!-- 4. PHYSICAL LABEL STATION -->
-        <section class="mt-24 bg-slate-100 p-10 rounded-[2rem] pdf-label-section">
-            <div class="no-print mb-12">
-                <h2 class="text-3xl font-black tracking-tight text-slate-900">Physical Label Station</h2>
-                <p class="text-slate-600 mt-3 text-lg">Print this section on standard A4 paper to generate replacement QR stickers for on-site assets.</p>
-                <button onclick="window.print()" class="mt-8 bg-slate-900 text-white font-black py-4 px-10 rounded-2xl hover:bg-slate-800 transition-all shadow-xl flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                    PRINT STICKER SHEET
-                </button>
-            </div>
-
-            <div class="label-grid grid grid-cols-2 md:grid-cols-4 gap-6">
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADPUlEQVR4nO2cTYqlMBCAvxqFt/RBH6CPojebM80N9Ch9A7MciNQsUomxBwZ6BJ+t5UKM+kGCZf2rKF/eph9fZ8Ahhxz6plAQ2wYWkSG0MEmLDEHSMO1sa4+enkPHQqjOjaqqKr1GgEahi0C3Oderarp5PPmaHNoP2bsfWlTnRezBBxEID9URSLpkeMn0HHoZ1CjTs1Gm5yJpCIvI0MVTTM+hA6B2M1qEfn6KEh4qADq9K9L/ajcicfI1ObQHShKRQ9AmQgD6+Q36X29IPy+tTu/JrSBdPfuaHNoLLSmKAEAGGpVhvSE8VH5+tDCJiMjz+Ok5dCjU2rsPQFhEp/dI2hHY7F4xPYdeAZVkw9CpQjDXQuS5SNoNXcy3HD89h46FUNWI6gw6puACAMtRqGqEfm5Ux07z7uRrcmgPREpOlZSUjl1klQOgSefWXJVLxKWh/PQ1UrSCJqWgWhKXM0AX8Zzl9aGcxZ4h64hiK1RzurLKULlEXBwyzTB2ER3zsFIKJiCrqLgfcXEIUw9pywWtkdrlJGkGcKtxA6jyIrMINKYj+k+mI4mFS8TFITYOZKNZIpo66gBy6OHR59UhswuVjkjBqAkI/VxsRacuETeAqG1FDjztUrexGnbkVuPiUI41ylEVhwKVohhpvIfqBtDGTKxaIAeeZjWS80lWFCdfk0N7oOpxW12jK+2URTZ0LtbFJeLqkD1pcxtz1FEyE1XUMeL5iDtAJYttSqGucKwRxpqKcM/y6lDRERELLmao61tQLpRS6MnX5NAeKOcjqtQksO2PyNrC/Yg7QPUXPCXgMNOxZiaAXAB1HXFxaKsAzH5kKSkuJ2waqU6+Jof2QJVnacONrUj3mEfhdY07QFXnVOVRlAq5KQWsqcb9iOtDdX9Er5Z2sA66Uvjqcz0U9yNuARXPMjzMdIyhReQJMuQbdWQRk5dvsCaH/hcq7kLpk5mpPctPHVbuR9wMsm/DRd4jMoSHypDzmLn08crpOXQA1P51ppvRaWhj/v73t+gkjQIR+o82nn5NDu2H1FrrIvbjkHyUfidB+R3Ra6bn0MFQ+TY8iFheivxHkf7DBERHFv82/AaQ+N8LHXLIoX9sfwBVOk8rtu+IqgAAAABJRU5ErkJggg==" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Welcome & Building Overview</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADbklEQVR4nO2cW26kMBBFT42R8mmkLCBLgZ2NsqTZAV5K7wA+I4HufPhBd6QZKYlEOnTxBbSP2lYq5VsPt4kPX+nXxxlwyCGHfii0WLlGNrNxMSNZR7nrAZaOOqg7enoOHQshzUGSJAatQPznnZQHT3e+Joe+DpX//eVJDDPotQ/StJjB8iRNQPYl47dMz6EDoe7maTNSP8Mwb50grJZ6jGH+ruk59O2QJsBGgmxkM01xBZbuv9Cnvsmh+4RudES7g9AeXUc8HrTlKAIAG5eOfZuwcXkSw6WDZGZm/fHTc+hQqIPYklTLZoI1P4hls33gdSbrztfk0BehlmwYo5R9BHHFrA8i9ZuVR/NY40Gg+GbSDHrty0u9WoeklV1ZaopSSVjd/5oc+jSUlWV9CIKooieHucrLCYC45iGuLE8Nsacra9RRjOEmzGjvPNY4O4Q0A4NU3cMcqgnkcBN294D7iIeAgopSYDPSy1uJMFIPpJeWhYgrxW/8gDU59Fko7xrFM8wlZwn1r198BOUDTe4jHgRKfY01hmoHNgI2Rt3qTvcRJ4c6YMtVC4OwGgSRxiBSP8tY+jzQhvkZIx47PYcOh9ilZN4+8r4Qa5kjq4d2N0X5rnFuqIjFFlzkdxOQd4g9HzHUEphbxKmhG+1YS5w5Dp2AnI9on3o+4vxQDSgJxRhawFG3juZG5jLELeLUUBaVgs2UDJT6rCJXWAylFwFLj+DNdPT0HDoc4jorGVVEZXEZ1TMQV89HPApUAwlazSvWgKOYStOTNQhxizg7FN8MompjJbUhIienFquPgP2++HmNk0N516i9EHXDgNJxmfsjsp6Mqu/ufE0OfQWqNfCWpmoFrasqKLtZuI44O8R1katVN1t/RG3Sxi3iUaDWQ1VEJS3M0EQxlavL8xGnh2o1vHXHtDQV7MFFDT1cR5wfuspi1+JGEQ7v2u1KZsJ3jbND78903ZQ01qt+muwjXEc8CFTOhrOZdOkgR5+XJ9UfkdjMrA+y0TtmHgsKshGoJ3hAry97Lzbk834/a00Ofex6/2sBpaC1dCvDn2dsmLdOaQwCVpT6cOj0HDocarVPgCgMwIgzKl3ZQWRTWZ5Xhvn50Ok5dDh0E2vM9UBP+aAd9oqtCurK8uzQzdnw6iuqy1j3E+Fl1zh6eg455NA3Q38B8+4L3S892ioAAAAASUVORK5CYII=" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Water Consumption & Shower Efficiency</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADTUlEQVR4nO2cQa6jSgxFjxukDMkOshTYWauX1DuApfQOYNhSofsHVS7qTb70fr5IHs81iCBwpCrFsa9dBhOfHsuPzzMQUEABfVFoszImgOUONm1mZvfdWPyC39SfPb2Azoc6SZJg6wF2gyHly/ZT5YhRkrSeP72AXgCV/z672c8VWOwmzVsPbMeRu5GvsaaA/idosR5pLY5CM7ux3N9megGdCg0S49oJ6GTTdhPLQ8p+4/XTC+gMqAfAU9C9FyRsnBOMv+/GuO59kRWDgO3c6QX0EmjPWQRsN9mUNUMP0Am2W5Gci5mZ3c+fXkCnQqgZaz1dOz/1INKM+c3XFNCTUPYHYBNg09Zj9kiY3cHsvpukv2YTe/iIbwDhrgAkJTQPqa09jMoSQprBj958TQE9AzXGwKj04bQGjDnf2kkzXVjEtaEsHNwYXD3MRx1zKFebW8Iirg7tRi5ADH+N5ZFgXL2OOf7p0bzdsrd4yfQCOhWibFVQ3UOuPVT1MCQ016PINS4P4XYgHXrSf/3UZp8zHk7CIq4MtWlGHUU4rG0VIvuNMXzE1aGqLFVEQpNhDMljylBTj8g+rw5xlCaLSKBayUrWmCVWZDERFnFxyOtSdG4CSi4r1io06RTZ5zeBWh8xD4eOkIqVuLc4hGZYxKWhtnYNnnUcR9UY3INE1Lg41NYjcqXyEJBelMjdVFo7hUVcHyoWUTKMVkUeAeNoxI16xPWhHobUA7tpmbpkpRcbxHZHy0PY+Lt/0fQCOh1qooEXJepm51ClpGvMUJbXhzxqfEguvDyRmuwz9jW+CeQ+ojoKfEujfLfWO4fqQd58TQE9A1WBsJsW65KW6SZjWFX6rgcB7L1/nDu9gE6HanGqVhzcM7jzOG4tviR8xKWhj73YbgxzvlbrmGunduvjzdcU0JPQ8Wx47qGSV6jYcwc2UDq1S+P2+68poP8MNdueZS8rDy9XHhlpzUPDR1waymLRoEvHl1Z6KvdebHfwVkyMYT11egG9HCr9tuvuLxh51FYaJaQ/ETUuDjWdlM3Od7u5kZpm/Yga3wUqwgHQr0fyJ7n8jSLAbvkR4ZyMfok1BfRUFRtoSxGHU6hP9bTbHG++poCegSzeXhhQQAH9y/gHkVtDpNQAGOgAAAAASUVORK5CYII=" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Smart Energy Scheduling Guide</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADeklEQVR4nO2cQY6jSgyGPz+QsgQpB+ijVG4wZ5ojvRvAUfoALVHLlkD/LMoFTC+eNC8akiauFYR86iq1U2X/tjHxx2P8588ZCCiggL4plM3HLbfYDbAbizGamVm/WPnMR3v09AI6FkKaGkmSSFMj6CRpAuhmgEbS1IgklSsNT76mgO6H/LfPYtUYJA2Ahu7TGHsoe8ntIdML6FFQJwGLQTYjTQC5/Rt/KaDvAeUWxr4R45tk1gOpHCdPMb2AjoDKDuAhaPdpQDuTJhD5IqP7aOtTAfnY6QX0EGgpUQTkS9kPtqiD9H5RufLQ4/jpBXQo1Ppvv4xPg25G8GmMbzPAYhr7hr2S9eRrCugeyKPPodw07jOUSFMzxdtMk38PiOjz5BDlH592ZkG5JWlmF4xqVSvCIs4MFYvQ0M2Qim2ABnw/8Ii0q/pVCoXq7BDlfPCjo1HdMtws3DaKWVQJMyzizJDvEZqodtBJGtZNgdUs/BAJizg51IKfEDMgDAyR25kSZvyYMLoJkXt8o3jyNQV0D+SeJeD65OY4rDkvDd3qY8apcXao+BHlagA8+pwaT4Du49DwI14BwneB3SeNSujhJuB7hAcciujz5FDJa1iarjPkHsFipGlBsADdh6c+xh9LzXA8+ZoCugdqgWY2AEv/gkEjI19ldB+I3GJwkdE1gnydn35NAd0DsRMgtGlQOylixmtnIKLPF4DWfAU7PWKvTLCXt4ubGRZxZujrzlCNobqSq1y5K7YMizgzxK7KNtXyW9ezp1XKXs1iiOjz7FD1I2q660tptl9pXtWKsIiTQ9UEJmBfif+7CUDVqsIizg61wGLyIsorjDeMEoJWKcJK1iP3kIbIa5wccs1y38GzlUv4cC8jaqheAtrHGiUvviW9O+0ebGYRFvECkH6+zdgtX8RoLWZv8/qNxRitpXZzPGJ6AR2e+6yFVPhZMdQk165OJuosXwbaesNpVBr8fDTSz94VTbsB0nv0hp8cKpkuAMx7M4A0Ici9KU1LCzSotHMdPL2AHgTV3nDY9XSV/q1Sc7d4O1f4EaeHvnZ+G1B6ukTuS4llGWlYjDRdD51eQI+Fut/7wLeXBwAatvcGfKc1BfS/oK38tijWY7+5kpcqU9UH32RNAd2jYvtNvrqPmd4vYuwnGG9NeWB0cytynBonhyzeXhhQQAH9x/gFsoK8yBtLqeoAAAAASUVORK5CYII=" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Climate Comfort & Efficiency</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAAC7klEQVR4nO2cX6rbOhCHv6kFfZThLCBLsXdwllS6pLMDa0EF+zEg87sPkhJxSm9uaZprw8xDSKzvYWCY/3JM/I6kL7+Fg/POO/9X+c2qzOXRbjaXZwHSCO08vEYf55/II62DJElMkj4dMK1DOSjccjT9nf8vfHXOzUxaQVrBZnbTEnM5sPmF+jj/t3izi2Qzg7REyeYt/K/6OP9nfPj8YPoIWelyNaZlD0qX/FJ9nH8uX+x7T7uCq4ktlGc2rQBRwPYKfZx/Pr+X8hgYZPP2VfZtrd9gC5DMzGx8lT7OP48P1TkB2ECQaVF5N6D37uPp7/wDKW0QQGmDFgBipjRNn0+Ppr/zD6S2vusgLdwa3mZVLVGCmAG8/z0ff/PfQUzKVEtHlZ+9E0f33/Px1IFGsWV102bkDNNK/XD7npHv7Ftkqi7bB2mtoMXj8wn5zmu1AHUgSU3H1YnLYNrtez6+ZtjOjFGd1JysXCott+/Z+Fo/w6AuUnehWZlSP3t/dEb+Vlq1NmhqlVZtjWip1/eDZ+RbfOZWRkUVTy6nJR3HW+N0NP2dfyC9667VyPVgrT1xHXx4fD4pv5uWLaDvF4k01tRrNu5l58BtEn1M/Z3/tQTY3mST9mBEgPjDxPaWSe8rxjaW/UJ5djj9nf93qfvfZKD0DsAgI14NMJQuwiaBTR+v0Mf55/Jt/txK5/sso12ty33h5fn3ZHx3TbJviFoR3XVPXl+dkW/xecSAkAV7MOIeRBQGYDBkpXF9gT7OP5dvG0C1rrcL0rdJdOfiR9Pf+Qdyb3jv19ip+Re4Z2LfD56Vb+8vsAVs5j7JqjtDLexWzX1E/Z1/xNf3F9hNC2BzzJiNg5jWvVyd1Pfxdfo4/yz+p/vtsJuSDVlpDlnpkoPY3rJB8PnGyflBpEuGSVdjWneD7avMLlerm8Jj6+/8T/L5/cF64Wroyun2zeur8/GBbnmwveV23f1qSu8q82fSew7e/56SN/9/BuedPy3/DxG9b9tu2NjHAAAAAElFTkSuQmCC" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Waste Management</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACyElEQVR4nO2cTYrkMAyFn8aBWqagD9BHcW4wR2rmZvFR6gADznLA4c1Ccn6goaaYdDoGaWEqzrcQiGdLslNCvGLpx0s44Lzzzn8pP4nZoFOzAJj1UQez7hx/nD+YDyRJAlMHJLnpL45TB52LJMl8lj/OH82bOAHIRwZkQCBUyX2BSnw40R/nv4afBekOIN1taTYRf5c/zh/K96QJdhfpb/PH+f/mVZ21SJo7YBIw/fzdEQAk5jcAPQFMZ/jj/PH8rOkxMN2ImAPl43GjDMvSnERE5H6WP84fx3cmTgDANAuBAqZ7ANI9AOgLti2Qq/nv/BMjc62PYq6TkQUce5JjfQR6kuPV/Hf+iVnpC4DjOvQFlmn1S+nr8W2QB6laLbvZvugLVTJzoMe3SX5Zn9cwFhVxlW7g5tHj2xhvMoU2rGp8VdMIGl/rT9Lj2x5vsdwOrO1oQJMsa3wgeHyb421VjhlArCs1sJGubcyWTl/Nf+efGJnrMNb+ZI25BV6zr5hdv+3xHYBQkAZA0NukoP8jTO9LTj3d6P3JJnnbcEcEG2zrDcv+a0WS67dJfr//ws7y9/2Neqbk8W2P31a9WgkvwwjLr7R/Fb0+apCvqRWAtQxCZK2KYn1rMb+a/87/Ex8zQD5Ean00i8bckqxAGfpynj/OH8Rvmsv6OC76jfVMqbaofX1uj9/criIwdwIATBIKMb0VpvfSAdMbrXq6mv/OP7Ha37CCyJpYeSmX8sr5/tsev2k4b1PntTRaO5Ue3wZ5rArdXtPAqunaqfTzwVb5XdcqPkRvtcuA9U7HLIgP/z6lPX4nU64Xcpb+Rq6c588t8t1nkxLHAgFmYXovHdMQigBduZ7/zr/G64L8626/5OPRbV5c33/n97b/fiFQv1+wkwZA7Hb0LIg8wx/nj+V3+XM9abBLdks7WlNn338b5MX/n8F555vl/wLgyFNer1g5bAAAAABJRU5ErkJggg==" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Internal Lighting</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACz0lEQVR4nO2cTYrjMBCFX40MWcowB8hR5BvMkZo+0tzAOkoO0CDvZd4sVHKUHpgQxu22oLQwcfItCl4/qX7sFuKVFX+8hAPGG2/8l/KL6JqwClAvMgEoF13DMfEYvzPvSJIElgGIcimfOC8DyneBJJmOisf4vXk1JxwREiATHFGc7DOKxacD4zH+a/hVRK4ZiKNuzWri74rH+F15T1ZBV0EcUZT+tniM/2++uLMWSesA+A9h/PUxEAAkpJ8APAEsR8Rj/P78WtJjYLkQ4XahvN0ulGnbmqOIiIxHxWP8fvyg5gQALKswjg6MowPi6AD4jLYFcrb4jX+yyFTro5Dql4EZnD3Jud7q6Xy2+I1/ssjkikE5wxVBOfsMLY38Vvqavh3y6t8Z7qER7TNIZnVy+RMwfTvkQV25Ku0zyq6s1lVPm75d8ps5s97OQLFu2a6ZHLU/SdO3Px6aWvHRtWQ9kz3L1gzAmb7d8Wh24GaM0FhXMy1Np88Wv/HP+VUAAHyXATIBIJP2n8skiQmQt5vNB/vjm/pIt2HfGhYhoTmJzb+98Zo/b72MevRuNbHXIgnB9O2QL5svQtLRLwJbE7eetvyqQ75tXrCK3PQ8tL8Bzb5M3854rXV57zBDC95iXZV70/xs8Rv/ZDUF0byVQazzBc20quamb2/85/mRZs3cLmlrZ1n92yH/MDwAapp8L4h8bppYpm9vfHO4av6cNmmLyHfOzt/++G1+pK3Ju2ubrrOqb/r2x+Pu0CZr1h+cdjqCzX975rf3FwCQNylPtcuEOi6csQqC9Z875MsjkgK4DH0+lpDw+0LE0UFCGnX6EK/5gHiM35cfPt0Ty5CLf4FVGK95YJxcFmDI54vf+Fd5n8H3UbdmnQoCdfp//viNb9fj+wvlrbKBOmkARJ+OXgWBR8Rj/L78Q/789wMbKJr7bYR4tviN//cS+/8MxhvfLf8H55BsetxL3rkAAAAASUVORK5CYII=" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">External Lighting</div>
-                </div>
-                
-                <div class="qr-sticker shadow-sm border border-slate-200 bg-white aspect-square flex flex-col justify-between overflow-hidden">
-                    <div class="sticker-brand tracking-[0.3em] py-2 bg-slate-50 text-slate-400">UGUIDE.FYI</div>
-                    <div class="flex-grow flex items-center justify-center p-4">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAAC10lEQVR4nO2cTW7cMAxGHysDWdrAHCBH0dwsyJF6A/souYG9DCDj60I/Yxdo06DJYASQC8Gy34IAh5RISmPiM7L8+BQOzjvv/LfymxW5AmbTbnbN7wZYJqjfh/vo4/wX8gMQEgAGIEAsU0iwXbD4NiTiDLBd7qCP89/BF+fczOy6DdjLCsBuMKb64Y76OP9V/HCahcQyBcS2mxiFsV3SPfVx/pv5uNanZdpNr8/p7/x36+P8f/FIa5AkibiC5jGVQUoQJRElZW5+NP2d/7sM5GU2S0gW355Uhp8X5fi8ZCDcQR/nv5ZHB1mDNI+SZkKre4Qj4f7bGZ/jc36MUrVqjs/F5revbt/e+GLfuLaVeAVitmpx55Ik4etvf3x20zopls4GPW+tYHT/7ZaPSmiuL6W3J+l12k1zLm20LdiD6u/8n+SQH2X/bZlSc2zNefD43B/PbcEtFiQcAnIeYrW+27c3vpQxgNOuqhk5KlELH77+9scfylTHbdR4C9KJ23bL7dsb3+Jznc4Ury2pUX3n9cku+eq/a3mS1mPNQ/PY/Nft2yFft8ljOk1plY6cOJWNtdu3Tz577TxKdqUkRCwTLSf2/LdTfgD2AQiyvAhvE0TtJsYViz+nDCp3+h9Nf+c/kEPX6Jb13oqUQK1U+vrbIV/7Cyq1jNIGbFWNqNLp9/y3S775bzp1knI63EqTtZLl9u2Nb1YtQ941M9b8tyTGrXr5aPo7/4Gczm8cp4eub/sJuH1740v9Cjhso8q09hzKO4/PHfKn+wvbBLBbyYV4NwH5OHS5xPBo+jv/L3y5v0DIUdmu7MYyBdnLupvZBHqd7qeP81/Fn+8v7FaP6oQE25C0PKdBbJdkMHh9ozt++G1uEMQyYYrrZGJ7kjG+V8M/mv7OfyDH+ws6n9UASs1jxfu//fJ7vt4Lm1npKozvVs7nbGZmz5Kvv13ybcH9N/H/Z3De+QfifwG4gX4GXN282wAAAABJRU5ErkJggg==" alt="QR Code" class="max-h-full">
-                    </div>
-                    <div class="sticker-title uppercase tracking-tighter">Access Control & Security</div>
-                </div>
-                
-            </div>
-        </section>
+        <!-- 4. PHYSICAL LABEL STATION (Gated via config flag) -->
+        
     </main>
 
     <footer class="max-w-4xl mx-auto px-4 mt-20 pb-16 text-center text-slate-400 text-xs no-print border-t border-slate-200 pt-12">
         <div class="font-black text-slate-300 text-2xl mb-2 italic uppercase tracking-tighter">UGUIDE<span class="text-slate-200">.FYI</span></div>
-        <p>&copy; 2026 Co-Perform. Building User Guide System.</p>
+        <p>&copy; 2026 Co-Perform.</p>
     </footer>
 
 </body>

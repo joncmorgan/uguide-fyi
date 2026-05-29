@@ -1,7 +1,7 @@
-/* pdf.css - v2.3.3 
+/* pdf.css - v2.3.5
    Cleaned up visibility logic to prevent accidental web hiding.
    Forces a pure white background for printing/PDF generation to save ink.
-   Upgraded with full CSS styling support for Markdown Admonitions/Callout cards.
+   Upgraded with full CSS styling support for Markdown Admonitions/Callout cards and draft watermarks.
 */
 
 @page {
@@ -120,4 +120,21 @@ html, body {
     width: 3.5cm !important;
     height: 3.5cm !important;
     margin: 10pt auto;
+}
+
+/* --- PHYSICAL PDF DRAFT WATERMARK (Repeated on every A4 sheet via Weasyprint fixed behavior) --- */
+.draft-watermark {
+    position: fixed;
+    top: 40%;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    font-size: 8rem;
+    color: rgba(148, 163, 184, 0.45) !important; /* Adjusted to a slightly darker slate grey with balanced opacity */
+    transform: rotate(-25deg);
+    z-index: 1000;
+    pointer-events: none;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
 }
